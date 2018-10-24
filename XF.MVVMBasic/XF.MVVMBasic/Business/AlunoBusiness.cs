@@ -11,7 +11,6 @@ namespace XF.MVVMBasic.Business
         public List<Aluno> GetAlunos()
         {
             AlunoRepository repository = new AlunoRepository();
-
             return repository.GetAlunos();
         }
     }
