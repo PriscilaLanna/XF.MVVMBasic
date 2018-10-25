@@ -6,12 +6,11 @@ using XF.MVVMBasic.Repository;
 
 namespace XF.MVVMBasic.Business
 {
-    public class AlunoBusiness
+    public class AlunoService
     {
         public List<Aluno> GetAlunos()
-        {
-            AlunoRepository repository = new AlunoRepository();
-            return repository.GetAlunos();
+        {            
+            return new AlunoRepository().GetAlunos();
         }
     }
 }

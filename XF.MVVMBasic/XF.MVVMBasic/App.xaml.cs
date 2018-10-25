@@ -11,7 +11,7 @@ namespace XF.MVVMBasic
 		{
 			InitializeComponent();
 
-			MainPage = new MainPage();
+            MainPage = new NavigationPage(new  View.AlunoView());
 		}
 
 		protected override void OnStart ()

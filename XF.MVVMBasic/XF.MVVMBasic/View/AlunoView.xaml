@@ -3,11 +3,32 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XF.MVVMBasic.View.AlunoView">
     <ContentPage.Content>
-        <StackLayout Padding="20">
-            <Label Text="Aluno" Font="20" />
-            <Label Text="{Binding Nome}" />
-            <Label Text="{Binding RM}" />
-            <Label Text="{Binding Email}" />
+        <StackLayout Orientation="Vertical" Padding="20">
+            <!--<ListView x:Name="lstView" ItemsSource="{Binding AlunosViewModel}" BackgroundColor="White" SeparatorColor="Pink" RowHeight="4" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell   
+                        Text="Nome"                            
+                        Detail="{Binding Nome}"                           
+                        DetailColor="Violet"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>-->
+            <ListView x:Name="AlunosViewModel" ItemsSource="{Binding AlunosViewModel}" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell >
+                            <ViewCell.View>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding RM}" TextColor="BlueViolet" />
+                                    <Label Text="{Binding Nome}" TextColor="Violet" />
+                                    <Label Text="{Binding Email}" TextColor="Pink" />
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XF.MVVMBasic.Business;
 using XF.MVVMBasic.ViewModel;
 
 namespace XF.MVVMBasic.View
@@ -13,14 +14,13 @@ namespace XF.MVVMBasic.View
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class AlunoView : ContentPage
     {
-        AlunoViewModel vmAluno;
+        AlunoViewModel alunoViewModel;   
 
         public AlunoView()
         {
-            var aluno = AlunoViewModel.GetAluno();
-            vmAluno = new AlunoViewModel(aluno);
-            BindingContext = vmAluno;
-
+            alunoViewModel = new AlunoViewModel(AlunoViewModel.GetAlunos());
+               
+            BindingContext = alunoViewModel;
             InitializeComponent();
         }
     }
